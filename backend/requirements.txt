@@ -1,0 +1,29 @@
+# FastAPI and Server
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Database
+sqlalchemy[asyncio]
+aiomysql
+alembic
+
+# Authentication
+python-jose[cryptography]
+passlib[bcrypt]
+bcrypt
+
+# Validation
+pydantic
+pydantic-settings
+email-validator
+
+# HTTP Client
+httpx
+aiohttp
+
+# Utilities
+python-dotenv
+
+# Google Gemini AI (new SDK)
+google-genai

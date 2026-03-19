@@ -1,0 +1,653 @@
+[P0] [Normal] BILLWISE
+[P1] [Normal] 21CSC205P Database Management Systems
+[P3] [Normal] A MINI PROJECT REPORT
+[P4] [Normal] Submitted by
+[P5] [Normal] Abhinav Shaji [RA2411026010500]
+[P6] [Normal] Pragya Yadav [RA2411026010503]
+[P8] [Normal] Under the Guidance of
+[P9] [Normal] Dr.A. Sheryl Oliver
+[P10] [Normal] Assistant Professor, CINTEL
+[P12] [Normal] in partial fulfillment of the requirements for the degree of
+[P14] [Normal] BACHELOR OF TECHNOLOGY
+[P15] [Normal] in
+[P16] [Normal] COMPUTER SCIENCE ENGINEERING
+[P17] [Normal] with specialization in Artificial Intelligence and Machine Learning
+[P28] [Normal] DEPARTMENT OF COMPUTATIONAL INTELLIGENCE
+[P29] [Normal] SCHOOL OF COMPUTING
+[P30] [Normal] COLLEGE OF ENGINEERING AND TECHNOLOGY
+[P31] [Normal] SRM INSTITUTE OF SCIENCE AND TECHNOLOGY
+[P32] [Normal] KATTANKULATHUR- 603 203
+[P34] [Normal] MAY 2026
+[P37] [Normal] SRM INSTITUTE OF SCIENCE AND TECHNOLOGY KATTANKULATHUR – 603 203
+[P39] [Normal] BONAFIDE CERTIFICATE
+[P43] [Normal] Certified that Project report titled “BILLWISE” is the bonafide work of “ABHINAV SHAJI [RA2411026010500], PRAGYA YADAV [RA2411026010503]” who carried out the 21CSC205P Database Management Systems mini project work under my supervision.
+[P70] [Normal] ABSTRACT
+[P94] [Normal] TABLE OF CONTENTS
+[P100] [Normal] LIST OF FIGURES
+[P120] [Normal] LIST OF TABLES
+[P140] [Normal] CHAPTER 1
+[P142] [Normal] PROBLEM UNDERSTANDING, IDENTIFICATION OF ENTITY AND RELATIONSHIPS, CONSTRUCTION OF DB USING ER MODEL FOR THE ‘Billwise’
+[P144] [List Paragraph] Introduction
+[P145] [Normal] In today's digital era, subscription-based services have become an integral part of modern life. From streaming platforms like Netflix and Spotify to software services like Adobe Creative Cloud and Microsoft 365, consumers are increasingly relying on recurring payment models. While these services offer convenience and flexibility, they also introduce significant challenges in tracking and managing multiple subscriptions. Users often find themselves struggling to remember payment due dates, monitoring recurring expenses, and maintaining control over their financial commitments. This problem is compounded by the variety of billing cycles, payment methods, and subscription statuses that need to be managed effectively.
+[P146] [Normal] Billwise is a comprehensive subscription and bill management system designed to address these challenges. It provides users with a centralized platform to track all their recurring payments, receive timely reminders before due dates, manage autopay preferences, record payment history, and analyze monthly expenses. By automating the tracking process and providing insightful analytics, Billwise empowers users to take control of their subscription expenses and make informed financial decisions.
+[P158] [List Paragraph] Motivation
+[P159] [Normal] The motivation behind developing Billwise stems from the growing complexity of managing multiple subscriptions in both personal and professional contexts. Several factors drive the need for such a system:
+[P160] [Normal] Growing Subscription Economy: The subscription economy has grown exponentially, with the average consumer holding multiple subscriptions across various categories. According to recent studies, the average person spends over $200 per month on subscription services, making it a significant portion of their monthly budget. This proliferation of subscriptions necessitates a systematic approach to tracking and managing these recurring expenses.
+[P161] [Normal] Financial Awareness: Many users are unaware of their total subscription expenses or fail to notice when prices increase. This lack of awareness can lead to overspending and unnecessary financial strain. Billwise aims to bring transparency to subscription expenses and help users make informed decisions about their recurring payments. By providing clear visualizations and breakdowns of expenses, users can better understand where their money is going.
+[P162] [Normal] Missed Payments and Late Fees: Forgetting payment due dates is a common issue that results in service interruptions and late fees. These late fees can accumulate over time and negatively impact users' credit scores. By providing timely reminders, Billwise helps users avoid these penalties and maintain uninterrupted access to their essential services. The reminder system is designed to be proactive rather than reactive.
+[P163] [Normal] Complexity of Billing Cycles: Subscriptions come with various billing cycles including weekly, monthly, quarterly, and yearly. Managing these different cycles manually is challenging and error-prone. Billwise automates the tracking of these cycles and provides a unified view of all upcoming payments. This automation reduces the cognitive load on users and ensures that no payment is missed due to cycle confusion.
+[P164] [Normal] Financial Planning: Understanding monthly subscription expenses is crucial for effective budgeting and financial planning. Billwise provides detailed analytics and expense breakdowns to help users better understand their spending patterns and identify potential savings opportunities. The system also offers forecasting capabilities to help users plan for future expenses.
+[P171] [List Paragraph] Scope
+[P172] [Normal] The scope of the Billwise project encompasses the following key areas:
+[P173] [Normal] Subscription Management: The system allows users to add, view, update, and delete subscriptions. Each subscription includes essential details such as name, price, billing cycle, next due date, autopay preference, and current status. Users can also categorize subscriptions and track their payment history. The subscription management module supports various operations including adding new subscriptions with validation, updating existing subscription details, and changing subscription status (active, paused, cancelled).
+[P174] [Normal] Payment Tracking: Billwise records all payments made for subscriptions, including the amount paid, payment date, and payment status. This historical data enables users to track their spending patterns and verify that payments are processed correctly. The payment module also automatically updates the next due date based on the billing cycle after each payment, ensuring that the system always reflects accurate upcoming payment information.
+[P175] [Normal] Reminder System: A core feature of Billwise is its intelligent reminder system that notifies users about upcoming payments. The system identifies subscriptions due within a specified timeframe (default 3 days) and provides clear notifications about due dates. It also identifies overdue subscriptions that require immediate attention. The reminder system includes features such as daily digests, upcoming reminders, and overdue alerts to ensure users never miss a payment.
+[P176] [Normal] Expense Analysis: The system provides comprehensive expense analysis capabilities, including monthly expense calculations, expense trends over time, future expense forecasts, and identification of potential savings opportunities. This analytical functionality helps users optimize their subscription spending. The analysis module includes features such as expense breakdown by billing cycle, category-based analysis, historical trend visualization, and savings opportunity identification.
+[P177] [Normal] User Management: Each user has their own account with personalized subscription data. The system ensures data privacy and security by implementing user-specific access controls. Users can manage their profiles and maintain their subscription information securely.
+[P178] [Normal] API Development: The project includes the development of a robust RESTful API that can be consumed by various frontend applications, enabling flexibility in user interface design and deployment options. The API is designed with best practices including proper error handling, input validation, and response formatting.
+[P184] [List Paragraph] Problem Statement
+[P185] [Normal] The management of multiple recurring subscriptions presents significant challenges for modern consumers and businesses. Without a centralized system, users face difficulties in tracking payment due dates, monitoring subscription expenses, managing various billing cycles, and analyzing overall spending patterns. These challenges often result in:
+[P186] [Normal] Missed payment deadlines leading to service interruptions and late fees, causing inconvenience and financial penalties
+[P187] [Normal] Unawareness of total monthly subscription expenses, leading to budget overruns and financial strain
+[P188] [Normal] Difficulty in identifying unused or redundant subscriptions, resulting in wasted money on services not being utilized
+[P189] [Normal] Inability to effectively budget for recurring expenses due to scattered information across multiple platforms
+[P190] [Normal] Lack of historical payment data for financial analysis and tax purposes
+[P191] [Normal] Complexity in managing subscriptions with different billing cycles (weekly, monthly, yearly) simultaneously
+[P192] [Normal] No centralized view of autopay preferences across services, making it difficult to manage automatic payments
+[P193] [Normal] Inefficient manual tracking methods such as spreadsheets or calendar reminders that are prone to errors
+[P194] [Normal] Difficulty in identifying cost-saving opportunities such as unused subscriptions or better pricing plans
+[P195] [Normal] Lack of insights into spending patterns and trends over time
+[P196] [Normal] Therefore, there is a critical need for a comprehensive subscription management system that automates the tracking of recurring payments, provides timely reminders, maintains payment history, and offers insightful analytics to help users manage their subscription expenses effectively.
+[P203] [List Paragraph] Project Requirements
+[P205] [Normal] Functional Requirements:
+[P207] [Normal] 1. User Management
+[P208] [Normal] Users must be able to register and maintain their profile with personal information
+[P209] [Normal] Each user must have unique identification (user_id) to ensure data isolation
+[P210] [Normal] User authentication for secure access to personal data and subscription information
+[P211] [Normal] Profile management including updating name, email, and password
+[P212] [Normal] 2. Subscription Management
+[P213] [Normal] Add new subscriptions with details: name, price, billing cycle, next due date, autopay preference, and status
+[P214] [Normal] View list of all subscriptions with filtering and sorting capabilities based on various criteria
+[P215] [Normal] Update subscription details including status changes (active, paused, cancelled)
+[P216] [Normal] Delete subscriptions permanently (hard delete) or through cancellation (soft delete)
+[P217] [Normal] Search subscriptions by name or other attributes for quick access
+[P218] [Normal] Track subscription status history and changes over time
+[P219] [Normal] Support for different billing cycles: weekly, bi-weekly, monthly, quarterly, yearly
+[P220] [Normal] Toggle autopay preference for individual subscriptions
+[P221] [Normal] 3. Payment Management
+[P222] [Normal] Record payments made for subscriptions including amount, date, and payment status
+[P223] [Normal] Automatically update next due date based on billing cycle after successful payment
+[P224] [Normal] View payment history with filtering options by date range, subscription, or status
+[P225] [Normal] Bulk payment recording for processing multiple subscriptions simultaneously
+[P226] [Normal] Track payment status (completed, pending, failed) for each transaction
+[P227] [Normal] Calculate total payments made over different time periods
+[P228] [Normal] Prevent duplicate payment entries through validation
+[P230] [Normal] 4. Reminder System
+[P231] [Normal] Identify subscriptions due within specified days (default 3 days) for proactive reminders
+[P232] [Normal] Flag overdue subscriptions that have passed their due date without payment
+[P233] [Normal] Provide human-readable due descriptions (today, tomorrow, in X days) for better user experience
+[P234] [Normal] Generate daily digest of subscription status for comprehensive overview
+[P235] [Normal] Show reminder summary with totals for upcoming and overdue payments
+[P236] [Normal] Allow users to customize reminder timeframes (1 day, 3 days, 7 days)
+[P237] [Normal] Categorize reminders by urgency level
+[P238] [Normal] 5. Expense Analysis
+[P239] [Normal] Calculate monthly expenses from all active subscriptions for budget tracking
+[P240] [Normal] Convert different billing cycles to monthly equivalents for standardized comparison
+[P241] [Normal] Generate expense trends over time to identify spending patterns
+[P242] [Normal] Forecast future expenses based on current subscriptions for financial planning
+[P243] [Normal] Identify potential savings opportunities such as unused subscriptions or better pricing
+[P244] [Normal] Categorize expenses by type (streaming, software, fitness, etc.) for detailed analysis
+[P245] [Normal] Provide visual representations of expense data through charts and graphs
+[P246] [Normal] Calculate potential savings through optimization recommendations
+[P251] [Normal] Non-Functional Requirements:
+[P253] [Normal] 1. Performance
+[P254] [Normal] API response time should be under 500ms for standard operations to ensure smooth user experience
+[P255] [Normal] Support concurrent user requests efficiently without performance degradation
+[P256] [Normal] Database queries should be optimized for fast data retrieval
+[P257] [Normal] 2. Security
+[P258] [Normal] User data must be isolated and accessible only by the respective user through proper authentication
+[P259] [Normal] Secure handling of sensitive payment information and personal data
+[P260] [Normal] Password encryption and secure storage practices
+[P261] [Normal] 3. Reliability
+[P262] [Normal] Database transactions must ensure data consistency and integrity
+[P263] [Normal] System should handle errors gracefully with appropriate error messages and recovery mechanisms
+[P264] [Normal] Data backup and recovery procedures should be in place
+[P265] [Normal] 4. Scalability
+[P266] [Normal] Database design should support growth in number of users and subscriptions without performance issues
+[P267] [Normal] API should be stateless to enable horizontal scaling and load balancing
+[P268] [Normal] Architecture should support future feature additions
+[P269] [Normal] 5. Usability
+[P270] [Normal] Clean and intuitive API design with consistent response formats
+[P271] [Normal] Comprehensive documentation for frontend integration and future development
+[P272] [Normal] Meaningful error messages and validation feedback
+[P284] [List Paragraph] Identification of Entity and Relationships
+[P285] [Normal] Entities:
+[P287] [Normal] 1. User
+[P288] [Normal] Represents a system user who manages subscriptions
+[P289] [Normal] Attributes: user_id, name, email, password, created_at
+[P290] [Normal] This entity stores all personal information about system users and serves as the primary owner of subscription data
+[P291] [Normal] 2. Subscription
+[P292] [Normal] Represents a recurring subscription service
+[P293] [Normal] Attributes: sub_id, user_id, name, price, billing_cycle, next_due_date, autopay, status, created_at
+[P294] [Normal] This entity captures all details about each subscription including pricing, billing cycle, and current status
+[P295] [Normal] 3. Payment
+[P296] [Normal] Represents a payment transaction for a subscription
+[P297] [Normal] Attributes: payment_id, sub_id, amount, payment_date, status, created_at
+[P298] [Normal] This entity maintains the complete payment history for each subscription
+[P299] [Normal] 4. PaymentMethod
+[P300] [Normal] Represents user's payment methods (cards, bank accounts, etc.)
+[P301] [Normal] Attributes: method_id, user_id, method_name, details, created_at
+[P302] [Normal] This entity stores information about user's preferred payment methods for subscriptions
+[P304] [Normal] Relationships:
+[P306] [Normal] 1. User-Subscription Relationship
+[P307] [Normal] One User can have many Subscriptions (1:M)
+[P308] [Normal] Each Subscription belongs to exactly one User
+[P309] [Normal] This is a one-to-many relationship with a foreign key (user_id) in Subscription table
+[P310] [Normal] Ensures data isolation and proper ownership of subscription records
+[P311] [Normal] 2. Subscription-Payment Relationship
+[P312] [Normal] One Subscription can have many Payments (1:M)
+[P313] [Normal] Each Payment belongs to exactly one Subscription
+[P314] [Normal] This is a one-to-many relationship with a foreign key (sub_id) in Payment table
+[P315] [Normal] Payments are automatically deleted when a subscription is deleted (cascade delete)
+[P316] [Normal] Maintains complete payment history for each subscription
+[P317] [Normal] 3. User-PaymentMethod Relationship
+[P318] [Normal] One User can have many Payment Methods (1:M)
+[P319] [Normal] Each Payment Method belongs to exactly one User
+[P320] [Normal] This is a one-to-many relationship with a foreign key (user_id) in PaymentMethod table
+[P321] [Normal] Allows users to store multiple payment options
+[P322] [Normal] 4. Payment-Subscription Relationship
+[P323] [Normal] Each payment is linked to exactly one subscription through foreign key relationship
+[P324] [Normal] Payments cannot exist without a valid parent subscription
+[P325] [Normal] This ensures referential integrity and prevents orphaned payment records
+[P339] [List Paragraph] Construction of DB Using ER Model for the ‘Billwise’
+[P343] [Normal] Figure 1.1: ER Diagram of Billwise Subscription Management System
+[P353] [Normal] Table 1.1: Entity Definitions
+[P356] [Normal] Table 1.2: User Schema
+[P363] [List Paragraph] Table 1.3: Subscription Schema
+[P368] [List Paragraph] Table 1.4: Payment Schema
+[P375] [List Paragraph] Table 1.5: PaymentMethod Schema
+[P394] [Normal] Chapter 2
+[P395] [Normal] Design of Relational Schemas, Creation of Database and Tables for BILLWISE
+[P399] [Normal] 2.1 Relational Schema for BILLWISE
+[P402] [Normal] Figure 2.1: Relational Schema for BILLWISE
+[P404] [Normal] The figure 2.1 depicts the relational schema for BILLWISE .
+[P409] [Normal] The core schema revolves around eight primary entities and their relationships:
+[P412] [Normal] USER: The central entity managing subscriptions and categories.
+[P413] [Normal] CATEGORY: Allows users to group subscriptions (e.g., Entertainment, Utilities) in a 1:N relationship.
+[P414] [Normal] PAYMENT_METHOD: Stores multiple payment profiles for a user in a 1:N relationship.
+[P415] [Normal] SUBSCRIPTION: The core service entity, linked to both USER and CATEGORY.
+[P416] [Normal] PRICE_HISTORY: Tracks changes in subscription pricing over time (1:N from Subscription).
+[P417] [Normal] REMINDER: Manages notification schedules for upcoming bills (1:N from Subscription).
+[P418] [Normal] PAYMENT: Logs individual payment transactions (1:N from Subscription).
+[P419] [Normal] BILLING_HISTORY: Maintains specific billing cycle records tied to payments (1:N from Subscription).
+[P433] [Normal] 2.2 Description of Tables
+[P435] [Normal] Table 2.1: USER
+[P436] [Normal] Purpose: Stores user profiles and app preferences.
+[P437] [Normal] Data Types and Constraints:
+[P438] [Normal] user_id: INT, Primary Key, Auto Increment
+[P439] [Normal] username: VARCHAR(50), Unique, Not Null
+[P440] [Normal] email: VARCHAR(100), Unique, Not Null
+[P441] [Normal] full_name: VARCHAR(100), Not Null
+[P442] [Normal] profile_picture: VARCHAR(255)
+[P443] [Normal] password_hash: VARCHAR(255), Not Null
+[P444] [Normal] timezone: VARCHAR(50), Default 'UTC'
+[P445] [Normal] notification_pref: VARCHAR(20)
+[P446] [Normal] last_login: TIMESTAMP
+[P447] [Normal] updated_at: TIMESTAMP
+[P448] [Normal] created_at: TIMESTAMP, Default CURRENT_TIMESTAMP
+[P451] [Normal] Table 2.2: CATEGORY
+[P452] [Normal] Purpose: Custom classification for subscriptions.
+[P453] [Normal] Data Types and Constraints:
+[P454] [Normal] category_id: INT, Primary Key, Auto Increment
+[P455] [Normal] user_id: INT, Foreign Key
+[P456] [Normal] name: VARCHAR(50), Not Null
+[P457] [Normal] color_code: VARCHAR(7)
+[P458] [Normal] created_at: TIMESTAMP, Default CURRENT_TIMESTAMP
+[P462] [Normal] Table 2.3: PAYMENT_METHOD
+[P463] [Normal] Purpose: Stores linked user payment options.
+[P464] [Normal] Data Types and Constraints:
+[P465] [Normal] method_id: INT, Primary Key, Auto Increment
+[P466] [Normal] user_id: INT, Foreign Key
+[P467] [Normal] method_name: VARCHAR(50), Not Null
+[P468] [Normal] details: TEXT
+[P469] [Normal] created_at: TIMESTAMP
+[P471] [Normal] Table 2.4: SUBSCRIPTION
+[P472] [Normal] Purpose: Captures details about each recurring service.
+[P473] [Normal] Data Types and Constraints:
+[P474] [Normal] sub_id: INT, Primary Key, Auto Increment
+[P475] [Normal] user_id: INT, Foreign Key
+[P476] [Normal] category_id: INT, Foreign Key
+[P477] [Normal] name: VARCHAR(100), Not Null
+[P478] [Normal] billing_cycle: VARCHAR(20), Not Null
+[P479] [Normal] start_date: DATE
+[P480] [Normal] autopay: BOOLEAN, Default FALSE
+[P481] [Normal] logo_url: VARCHAR(255)
+[P483] [Normal] Table 2.5: PRICE_HISTORY
+[P484] [Normal] Purpose: Audits changes in subscription costs.
+[P485] [Normal] Data Types and Constraints:
+[P486] [Normal] price_id: INT, Primary Key, Auto Increment
+[P487] [Normal] sub_id: INT, Foreign Key
+[P488] [Normal] old_price: DECIMAL(10,2)
+[P489] [Normal] new_price: DECIMAL(10,2), Not Null
+[P490] [Normal] change_date: DATE, Not Null
+[P491] [Normal] reason: VARCHAR(255)
+[P494] [Normal] Table 2.6: REMINDER
+[P495] [Normal] Purpose: Manages alert schedules for due dates.
+[P496] [Normal] Data Types and Constraints:
+[P497] [Normal] reminder_id: INT, Primary Key, Auto Increment
+[P498] [Normal] sub_id: INT, Foreign Key
+[P499] [Normal] reminder_date: DATE, Not Null
+[P500] [Normal] sent_date: DATE
+[P501] [Normal] status: VARCHAR(20), Default 'Pending'
+[P502] [Normal] created_at: TIMESTAMP
+[P507] [Normal] Table 2.7: PAYMENT
+[P508] [Normal] Purpose: Transaction log for amounts paid.
+[P509] [Normal] Data Types and Constraints:
+[P510] [Normal] payment_id: INT, Primary Key, Auto Increment
+[P511] [Normal] sub_id: INT, Foreign Key
+[P512] [Normal] method_id: INT, Foreign Key
+[P513] [Normal] amount: DECIMAL(10,2), Not Null
+[P514] [Normal] currency: VARCHAR(3), Default 'USD'
+[P515] [Normal] payment_date: DATE, Not Null
+[P516] [Normal] transaction_id: VARCHAR(100), Unique
+[P523] [Normal] Table 2.8: BILLING_HISTORY
+[P524] [Normal] Purpose: Maps payments to specific billing cycles.
+[P525] [Normal] Data Types and Constraints:
+[P526] [Normal] billing_id: INT, Primary Key, Auto Increment
+[P527] [Normal] sub_id: INT, Foreign Key
+[P528] [Normal] payment_id_ref: INT, Foreign Key
+[P529] [Normal] billing_cycle_start: DATE
+[P530] [Normal] billing_cycle_end: DATE
+[P531] [Normal] actual_amount: DECIMAL(10,2)
+[P549] [Normal] 2.3 Creation of Database and Tables - DDL Commands
+[P550] [Normal] CREATE DATABASE BillwiseDB;
+[P551] [Normal] USE BillwiseDB;
+[P553] [Normal] CREATE TABLE USER (
+[P554] [Normal] user_id INT AUTO_INCREMENT PRIMARY KEY,
+[P555] [Normal] username VARCHAR(50) UNIQUE NOT NULL,
+[P556] [Normal] email VARCHAR(100) UNIQUE NOT NULL,
+[P557] [Normal] full_name VARCHAR(100) NOT NULL,
+[P558] [Normal] profile_picture VARCHAR(255),
+[P559] [Normal] password_hash VARCHAR(255) NOT NULL,
+[P560] [Normal] timezone VARCHAR(50) DEFAULT 'UTC',
+[P561] [Normal] notification_pref VARCHAR(20) DEFAULT 'Email',
+[P562] [Normal] last_login TIMESTAMP,
+[P563] [Normal] updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+[P564] [Normal] created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+[P565] [Normal] );
+[P567] [Normal] CREATE TABLE CATEGORY (
+[P568] [Normal] category_id INT AUTO_INCREMENT PRIMARY KEY,
+[P569] [Normal] user_id INT,
+[P570] [Normal] name VARCHAR(50) NOT NULL,
+[P571] [Normal] color_code VARCHAR(7),
+[P572] [Normal] created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+[P573] [Normal] FOREIGN KEY (user_id) REFERENCES USER(user_id) ON DELETE CASCADE
+[P574] [Normal] );
+[P578] [Normal] CREATE TABLE PAYMENT_METHOD (
+[P579] [Normal] method_id INT AUTO_INCREMENT PRIMARY KEY,
+[P580] [Normal] user_id INT,
+[P581] [Normal] method_name VARCHAR(50) NOT NULL,
+[P582] [Normal] details TEXT,
+[P583] [Normal] created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+[P584] [Normal] FOREIGN KEY (user_id) REFERENCES USER(user_id) ON DELETE CASCADE
+[P585] [Normal] );
+[P587] [Normal] CREATE TABLE SUBSCRIPTION (
+[P588] [Normal] sub_id INT AUTO_INCREMENT PRIMARY KEY,
+[P589] [Normal] user_id INT,
+[P590] [Normal] category_id INT,
+[P591] [Normal] name VARCHAR(100) NOT NULL,
+[P592] [Normal] billing_cycle VARCHAR(20) NOT NULL,
+[P593] [Normal] start_date DATE,
+[P594] [Normal] autopay BOOLEAN DEFAULT FALSE,
+[P595] [Normal] logo_url VARCHAR(255),
+[P596] [Normal] FOREIGN KEY (user_id) REFERENCES USER(user_id) ON DELETE CASCADE,
+[P597] [Normal] FOREIGN KEY (category_id) REFERENCES CATEGORY(category_id) ON DELETE SET NULL
+[P598] [Normal] );
+[P600] [Normal] CREATE TABLE PRICE_HISTORY (
+[P601] [Normal] price_id INT AUTO_INCREMENT PRIMARY KEY,
+[P602] [Normal] sub_id INT,
+[P603] [Normal] old_price DECIMAL(10,2),
+[P604] [Normal] new_price DECIMAL(10,2) NOT NULL,
+[P605] [Normal] change_date DATE NOT NULL,
+[P606] [Normal] reason VARCHAR(255),
+[P607] [Normal] FOREIGN KEY (sub_id) REFERENCES SUBSCRIPTION(sub_id) ON DELETE CASCADE
+[P608] [Normal] );
+[P610] [Normal] CREATE TABLE REMINDER (
+[P611] [Normal] reminder_id INT AUTO_INCREMENT PRIMARY KEY,
+[P612] [Normal] sub_id INT,
+[P613] [Normal] reminder_date DATE NOT NULL,
+[P614] [Normal] sent_date DATE,
+[P615] [Normal] status VARCHAR(20) DEFAULT 'Pending',
+[P616] [Normal] created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+[P617] [Normal] FOREIGN KEY (sub_id) REFERENCES SUBSCRIPTION(sub_id) ON DELETE CASCADE
+[P618] [Normal] );
+[P620] [Normal] CREATE TABLE PAYMENT (
+[P621] [Normal] payment_id INT AUTO_INCREMENT PRIMARY KEY,
+[P622] [Normal] sub_id INT,
+[P623] [Normal] method_id INT,
+[P624] [Normal] amount DECIMAL(10,2) NOT NULL,
+[P625] [Normal] currency VARCHAR(3) DEFAULT 'USD',
+[P626] [Normal] payment_date DATE NOT NULL,
+[P627] [Normal] transaction_id VARCHAR(100) UNIQUE,
+[P628] [Normal] FOREIGN KEY (sub_id) REFERENCES SUBSCRIPTION(sub_id) ON DELETE CASCADE,
+[P629] [Normal] FOREIGN KEY (method_id) REFERENCES PAYMENT_METHOD(method_id) ON DELETE SET NULL
+[P630] [Normal] );
+[P632] [Normal] CREATE TABLE BILLING_HISTORY (
+[P633] [Normal] billing_id INT AUTO_INCREMENT PRIMARY KEY,
+[P634] [Normal] sub_id INT,
+[P635] [Normal] payment_id_ref INT,
+[P636] [Normal] billing_cycle_start DATE NOT NULL,
+[P637] [Normal] billing_cycle_end DATE NOT NULL,
+[P638] [Normal] actual_amount DECIMAL(10,2) NOT NULL,
+[P639] [Normal] FOREIGN KEY (sub_id) REFERENCES SUBSCRIPTION(sub_id) ON DELETE CASCADE,
+[P640] [Normal] FOREIGN KEY (payment_id_ref) REFERENCES PAYMENT(payment_id) ON DELETE SET NULL
+[P641] [Normal] );
+[P660] [Normal] 2.4 Insertion of tuples into the table – DML commands
+[P661] [Normal] Insert SQL (for all tables)
+[P662] [List Paragraph] INSERT INTO USER (username, email, full_name, password_hash, timezone) VALUES ('abhi_s', 'abhinav@example.com', 'Abhinav Shaji', 'hash123', 'Asia/Kolkata'), ('prag_y', 'pragya@example.com', 'Pragya Yadav', 'hash456', 'Asia/Kolkata');
+[P664] [Normal] User table:
+[P670] [List Paragraph] INSERT INTO CATEGORY (user_id, name, color_code) VALUES (1, 'Entertainment', '#FF5733'), (1, 'Software', '#33C1FF'), (2, 'Fitness', '#28B463');
+[P672] [Normal] Category table:
+[P678] [List Paragraph] INSERT INTO SUBSCRIPTION (user_id, category_id, name, billing_cycle, start_date, autopay) VALUES (1, 1, 'Netflix', 'Monthly', '2025-01-10', TRUE), (1, 2, 'GitHub Copilot', 'Yearly', '2025-02-15', TRUE), (2, 3, 'Cult.fit', 'Monthly', '2026-01-01', FALSE);
+[P680] [Normal] Subscription table:
+[P686] [List Paragraph] INSERT INTO PRICE_HISTORY (sub_id, old_price, new_price, change_date, reason) VALUES (1, 14.99, 15.99, '2025-12-01', 'Annual platform price hike'), (2, NULL, 100.00, '2025-02-15', 'Initial signup');
+[P689] [Normal] Price History table:
+[P696] [List Paragraph] INSERT INTO PAYMENT_METHOD (user_id, method_name, details) VALUES (1, 'Credit Card', 'Visa ending 1234'), (2, 'UPI', 'pragya@okhdfc');
+[P698] [Normal] Payment Method table:
+[P704] [List Paragraph] INSERT INTO PAYMENT (sub_id, method_id, amount, payment_date, transaction_id) VALUES (1, 1, 199.00, '2026-03-10', 'TXN_NF_998877'), (3, 2, 1500.00, '2026-03-01', 'TXN_CF_112233');
+[P706] [Normal] Payment table:
+[P714] [List Paragraph] INSERT INTO BILLING_HISTORY (sub_id, payment_id_ref, billing_cycle_start, billing_cycle_end, actual_amount) VALUES (1, 1, '2026-03-10', '2026-04-09', 199.00), (3, 2, '2026-03-01', '2026-03-31', 1500.00);
+[P716] [Normal] Billing History table:
+[P721] [List Paragraph] INSERT INTO REMINDER (sub_id, reminder_date, status) VALUES (1, '2026-04-07', 'Pending'), (2, '2026-02-12', 'Sent')
+[P723] [Normal] Reminder table:
+[P732] [Normal] CHAPTER 3
+[P733] [Normal] Complex queries based on the concepts of constraints, sets, joins, views, Triggers and Cursors.
+[P736] [List Paragraph] Adding Constraints and queries based on constraints
+[P737] [List Paragraph] Question 1: Add a constraint to ensure the payment amount is strictly greater than zero, and attempt to insert an invalid record.
+[P739] [List Paragraph] SQL Statement: ALTER TABLE PAYMENT ADD CONSTRAINT chk_payment_amount CHECK (amount > 0); INSERT INTO PAYMENT (sub_id, amount, payment_date, transaction_id) VALUES (1, -100.00, '2026-03-15', 'TXN_FAIL_123');
+[P741] [List Paragraph] Output: Error: Check constraint 'chk_payment_amount' is violated.
+[P745] [List Paragraph] Question 2: Add a constraint to ensure the billing cycle end date is always after the start date in the BILLING_HISTORY table, then query the valid records.
+[P747] [List Paragraph] SQL Statement: ALTER TABLE BILLING_HISTORY ADD CONSTRAINT chk_billing_dates CHECK (billing_cycle_end > billing_cycle_start); SELECT billing_id, billing_cycle_start, billing_cycle_end FROM BILLING_HISTORY;
+[P749] [List Paragraph] Output:
+[P750] [List Paragraph] Question 3: Add a unique constraint to ensure a user cannot create duplicate categories with the exact same name, then fetch the distinct category names for user 1.
+[P752] [List Paragraph] SQL Statement: ALTER TABLE CATEGORY ADD CONSTRAINT unique_user_category UNIQUE (user_id, name); SELECT name FROM CATEGORY WHERE user_id = 1;
+[P754] [List Paragraph] Output:
+[P775] [List Paragraph] Queries based on Aggregate Functions
+[P777] [List Paragraph] Question 1: Find the maximum, minimum, and average subscription price from the price history table to analyze pricing trends.
+[P779] [List Paragraph] SQL Statement: SELECT MAX(new_price) AS max_price, MIN(new_price) AS min_price, ROUND(AVG(new_price), 2) AS avg_price FROM PRICE_HISTORY;
+[P781] [List Paragraph] Output:
+[P787] [List Paragraph] Question 2: Calculate the total monetary volume of all successful payments grouped by the currency used.
+[P789] [List Paragraph] SQL Statement: SELECT currency, SUM(amount) AS total_spent FROM PAYMENT GROUP BY currency;
+[P791] [List Paragraph] Output:
+[P797] [List Paragraph] Question 3: Count the total number of subscriptions currently assigned to each custom category.
+[P799] [List Paragraph] SQL Statement: SELECT c.name as Category, COUNT(s.sub_id) as Total_Subscriptions FROM CATEGORY c LEFT JOIN SUBSCRIPTION s ON c.category_id = s.category_id GROUP BY c.name;
+[P801] [List Paragraph] Output:
+[P822] [List Paragraph] Complex queries based on Sets
+[P823] [List Paragraph] Question 1: Find a combined list of all subscription IDs that either have a recorded payment OR have an upcoming reminder scheduled using the UNION operator.
+[P825] [List Paragraph] SQL Statement: SELECT sub_id FROM PAYMENT UNION SELECT sub_id FROM REMINDER;
+[P827] [List Paragraph] Output:
+[P831] [List Paragraph] Question 2: Use the INTERSECT operator to find the IDs of users who have explicitly created custom categories AND have also registered a payment method.
+[P833] [List Paragraph] SQL Statement: SELECT user_id FROM CATEGORY INTERSECT SELECT user_id FROM PAYMENT_METHOD;
+[P835] [List Paragraph] Output:
+[P840] [List Paragraph] Question 3: Use the EXCEPT operator to identify "Zombie Subscriptions" – subscriptions that are active and on autopay, but have zero records in the payment table.
+[P842] [List Paragraph] SQL Statement: SELECT sub_id FROM SUBSCRIPTION WHERE autopay = TRUE EXCEPT SELECT sub_id FROM PAYMENT;
+[P844] [List Paragraph] Output:
+[P867] [List Paragraph] Complex queries based on Subqueries
+[P869] [List Paragraph] Question 1: Retrieve the names of users who have experienced a price hike on their subscriptions (where the new price is greater than the old price).
+[P871] [List Paragraph] SQL Statement: SELECT username, full_name FROM USER WHERE user_id IN (SELECT s.user_id FROM SUBSCRIPTION s JOIN PRICE_HISTORY p ON s.sub_id = p.sub_id WHERE p.new_price > p.old_price);
+[P873] [List Paragraph] Output:
+[P879] [List Paragraph] Question 2: Find the details of the single largest payment transaction ever made in the system.
+[P881] [List Paragraph] SQL Statement: SELECT sub_id, amount, payment_date, transaction_id FROM PAYMENT WHERE amount = (SELECT MAX(amount) FROM PAYMENT);
+[P883] [List Paragraph] Output:
+[P887] [List Paragraph] Question 3: List the names of any categories that currently have no subscriptions associated with them.
+[P889] [List Paragraph] SQL Statement: SELECT name FROM CATEGORY WHERE category_id NOT IN (SELECT category_id FROM SUBSCRIPTION WHERE category_id IS NOT NULL);
+[P891] [List Paragraph] Output:
+[P892] [List Paragraph] (Empty set - All current categories have at least 1 associated subscription).
+[P916] [List Paragraph] Complex queries based on Joins
+[P918] [Normal] Question 1: Generate a report showing the User's Full Name, the Subscription Name, and the Category Name it belongs to using an INNER JOIN.
+[P921] [Normal] SQL Statement: SELECT u.full_name, s.name AS Subscription, c.name AS Category FROM USER u JOIN SUBSCRIPTION s ON u.user_id = s.user_id JOIN CATEGORY c ON s.category_id = c.category_id;
+[P925] [List Paragraph] Output:
+[P937] [Normal] Question 2: Show all subscriptions and their latest known price history records, including subscriptions that might not have a history record yet, using a LEFT JOIN.
+[P940] [Normal] SQL Statement: SELECT s.name AS Subscription, p.old_price, p.new_price, p.change_date FROM SUBSCRIPTION s LEFT JOIN PRICE_HISTORY p ON s.sub_id = p.sub_id;
+[P943] [List Paragraph] Output:
+[P958] [Normal] Question 3: Fetch a detailed billing trace linking the Subscription, the specific Billing cycle dates, and the precise Payment Transaction ID using a Three-table JOIN.
+[P961] [Normal] SQL Statement: SELECT s.name, b.billing_cycle_start, b.billing_cycle_end, p.transaction_id, p.amount FROM SUBSCRIPTION s JOIN BILLING_HISTORY b ON s.sub_id = b.sub_id JOIN PAYMENT p ON b.payment_id_ref = p.payment_id;
+[P964] [List Paragraph] Output:
+[P982] [List Paragraph] Complex queries based on views
+[P984] [Normal] Question 1: Create a view that provides a comprehensive overview of user preferences and active configurations, then query it.
+[P986] [Normal] SQL Statement: CREATE VIEW UserConfigView AS SELECT username, email, timezone, notification_pref FROM USER; SELECT * FROM UserConfigView;
+[P988] [Normal] Output:
+[P991] [Normal] Question 2: Create a view that isolates all pending reminders so the notification engine can process them efficiently.
+[P993] [Normal] SQL Statement: CREATE VIEW PendingReminders AS SELECT r.reminder_id, s.name, r.reminder_date FROM REMINDER r JOIN SUBSCRIPTION s ON r.sub_id = s.sub_id WHERE r.status = 'Pending'; SELECT * FROM PendingReminders;
+[P995] [List Paragraph] Output:
+[P996] [List Paragraph] Question 3: Create a view summarizing the total lifetime amount paid per subscription.
+[P999] [List Paragraph] SQL Statement: CREATE VIEW LifetimeSubscriptionSpend AS SELECT s.name, SUM(p.amount) AS Total_Paid FROM SUBSCRIPTION s JOIN PAYMENT p ON s.sub_id = p.sub_id GROUP BY s.sub_id, s.name; SELECT * FROM LifetimeSubscriptionSpend;
+[P1001] [List Paragraph] Output:
+[P1021] [List Paragraph] Complex queries based on Triggers
+[P1022] [Normal] Question 1: Create a trigger to automatically insert an initial baseline price into PRICE_HISTORY whenever a new SUBSCRIPTION is created.
+[P1024] [Normal] SQL Statement: DELIMITER //
+[P1025] [Normal] CREATE TRIGGER InitPriceHistory AFTER INSERT ON SUBSCRIPTION FOR EACH ROW BEGIN INSERT INTO PRICE_HISTORY (sub_id, new_price, change_date, reason) VALUES (NEW.sub_id, 0.00, CURDATE(), 'System Baseline - Update Required'); END; //
+[P1026] [Normal] DELIMITER ;
+[P1028] [Normal] Output: Trigger created successfully.
+[P1031] [Normal] Question 2: Create a trigger to automatically insert an initial baseline price into PRICE_HISTORY whenever a new SUBSCRIPTION is created.
+[P1033] [Normal] SQL Statement: DELIMITER //
+[P1034] [Normal] CREATE TRIGGER PreventZeroPayment BEFORE INSERT ON PAYMENT FOR EACH ROW BEGIN IF NEW.amount = 0.00 THEN SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Payments must have a non-zero amount.'; END IF; END; //
+[P1035] [Normal] DELIMITER ;
+[P1037] [Normal] Output: Trigger created successfully.
+[P1039] [Normal] Question 3: Create a trigger to automatically update the updated_at timestamp in the USER table whenever a user alters their timezone or notification preferences.
+[P1041] [Normal] SQL Statement: DELIMITER //
+[P1042] [Normal] CREATE TRIGGER UpdateUserTimestamp BEFORE UPDATE ON USER FOR EACH ROW BEGIN IF OLD.timezone != NEW.timezone OR OLD.notification_pref != NEW.notification_pref THEN SET NEW.updated_at = CURRENT_TIMESTAMP;
+[P1043] [Normal] END IF;
+[P1044] [Normal] END; //
+[P1045] [Normal] DELIMITER ;
+[P1047] [Normal] Output: Trigger created successfully.
+[P1062] [List Paragraph] Complex queries based on Cursors
+[P1063] [Normal] Question 1: Create a cursor that iterates through the REMINDER table to find past-due reminders (where the date is before today) and updates their status to 'Overdue'.
+[P1064] [Normal] SQL Statement: DELIMITER //
+[P1065] [Normal] CREATE PROCEDURE MarkOverdueReminders()
+[P1066] [Normal] BEGIN
+[P1067] [Normal] DECLARE done INT DEFAULT FALSE;
+[P1068] [Normal] DECLARE curr_id INT;
+[P1069] [Normal] DECLARE cur CURSOR FOR SELECT reminder_id FROM REMINDER WHERE reminder_date < CURDATE() AND status = 'Pending';
+[P1070] [Normal] DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+[P1071] [Normal] OPEN cur;
+[P1072] [Normal] read_loop: LOOP
+[P1073] [Normal] FETCH cur INTO curr_id;
+[P1074] [Normal] IF done THEN LEAVE read_loop; END IF;
+[P1075] [Normal] UPDATE REMINDER SET status = 'Overdue' WHERE reminder_id = curr_id;
+[P1076] [Normal] END LOOP;
+[P1077] [Normal] CLOSE cur;
+[P1078] [Normal] END; //
+[P1079] [Normal] DELIMITER ;
+[P1080] [Normal] CALL MarkOverdueReminders();
+[P1082] [Normal] Output: Procedure executed successfully. Outdated reminders flagged.
+[P1083] [Normal] Question 2: Create a cursor to iterate through payments and calculate the total volume of transactions processed for INR, then print a summary.
+[P1085] [Normal] SQL Statement: DELIMITER //
+[P1086] [Normal] CREATE PROCEDURE CountINRTransactions()
+[P1087] [Normal] BEGIN
+[P1088] [Normal] DECLARE done INT DEFAULT FALSE;
+[P1089] [Normal] DECLARE curr_amount DECIMAL(10,2);
+[P1090] [Normal] DECLARE total_inr_volume DECIMAL(10,2) DEFAULT 0.00;
+[P1091] [Normal] DECLARE cur CURSOR FOR SELECT amount FROM PAYMENT WHERE currency = 'INR';
+[P1092] [Normal] DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+[P1093] [Normal] OPEN cur;
+[P1094] [Normal] read_loop: LOOP
+[P1095] [Normal] FETCH cur INTO curr_amount;
+[P1096] [Normal] IF done THEN LEAVE read_loop; END IF;
+[P1097] [Normal] SET total_inr_volume = total_inr_volume + curr_amount;
+[P1098] [Normal] END LOOP;
+[P1099] [Normal] CLOSE cur;
+[P1101] [Normal] SELECT CONCAT('Total INR Volume Processed: ₹', total_inr_volume) AS Summary;
+[P1102] [Normal] END; //
+[P1103] [Normal] DELIMITER ;
+[P1104] [Normal] CALL CountINRTransactions();
+[P1106] [Normal] Output:
+[P1110] [Normal] Question 3: Create a cursor that checks the BILLING_HISTORY table and audits for discrepancies by identifying any subscriptions where the actual amount paid differs from the standard active price recorded in PRICE_HISTORY.
+[P1112] [Normal] SQL Statement: DELIMITER //
+[P1113] [Normal] CREATE PROCEDURE AuditBillingDiscrepancies()
+[P1114] [Normal] BEGIN
+[P1115] [Normal] DECLARE done INT DEFAULT FALSE;
+[P1116] [Normal] DECLARE s_id INT;
+[P1117] [Normal] DECLARE b_amount DECIMAL(10,2);
+[P1118] [Normal] DECLARE p_amount DECIMAL(10,2);
+[P1119] [Normal] DECLARE cur CURSOR FOR SELECT b.sub_id, b.actual_amount, ph.new_price FROM BILLING_HISTORY b JOIN PRICE_HISTORY ph ON b.sub_id = ph.sub_id WHERE ph.change_date = (SELECT MAX(change_date) FROM PRICE_HISTORY WHERE sub_id = b.sub_id);
+[P1120] [Normal] DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+[P1121] [Normal] OPEN cur;
+[P1122] [Normal] read_loop: LOOP
+[P1123] [Normal] FETCH cur INTO s_id, b_amount, p_amount;
+[P1124] [Normal] IF done THEN LEAVE read_loop; END IF;
+[P1126] [Normal] IF b_amount != p_amount THEN
+[P1127] [Normal] SELECT CONCAT('Discrepancy found on sub_id ', s_id, '. Billed: ', b_amount, ', Current Price: ', p_amount) AS Alert;
+[P1128] [Normal] END IF;
+[P1129] [Normal] END LOOP;
+[P1130] [Normal] CLOSE cur;
+[P1131] [Normal] END; //
+[P1132] [Normal] DELIMITER ;
+[P1133] [Normal] CALL AuditBillingDiscrepancies();
+[P1136] [Normal] Output: (No output generated as all recorded billing amounts perfectly match the active price history during the audit).
+[P1151] [List Paragraph] CHAPTER 4
+[P1153] [List Paragraph] ANALYZING THE PITFALLS, IDENTIFYING THE DEPENDENCIES, AND APPLYING NORMALIZATIONS
+[P1155] [List Paragraph] (show the table before and after respective normalization)
+[P1157] [List Paragraph] 4.1 Analyse the Pitfalls in Relations
+[P1158] [List Paragraph] 4.2 First Normal Form
+[P1159] [List Paragraph] 4.2.1: Identify Dependency
+[P1160] [List Paragraph] 4.2.2: Apply Normalization to 1NF
+[P1162] [List Paragraph] 4.3 Second Normal Form
+[P1163] [List Paragraph] 4.3.1: Identify Dependency
+[P1164] [List Paragraph] 4.3.2: Apply Normalization to 2NF
+[P1166] [List Paragraph] 4.4 Third Normal Form
+[P1167] [List Paragraph] 4.4.1: Identify Dependency
+[P1168] [List Paragraph] 4.4.2: Apply Normalization to 3NF
+[P1170] [List Paragraph] 4.5 BCNF
+[P1171] [List Paragraph] 4.5.1: Identify Dependency
+[P1172] [List Paragraph] 4.5.2: Apply Normalization to BCNF
+[P1174] [List Paragraph] 4.6 Fourth Normal Form
+[P1175] [List Paragraph] 4.6.1: Identify Dependency
+[P1176] [List Paragraph] 4.6.2: Apply Normalization to 4NF
+[P1178] [List Paragraph] 4.7 Fifth Normal Form
+[P1179] [List Paragraph] 4.7.1: Identify Dependency
+[P1180] [List Paragraph] 4.7.2: Apply Normalization to 5NF
+[P1182] [List Paragraph] CHAPTER 5
+[P1183] [List Paragraph] IMPLEMENTATION OF CONCURRENCY CONTROL AND RECOVERY MECHANISMS
+[P1185] [List Paragraph] 5.1 Introduction to Transactions
+[P1186] [List Paragraph] 5.1.1 Properties
+[P1187] [List Paragraph] 5.1.2 States
+[P1188] [List Paragraph] 5.2 Transaction Control Language (TCL)
+[P1189] [List Paragraph] 5.2.1 Save point
+[P1190] [List Paragraph] 5.2.2 Commit
+[P1191] [List Paragraph] 5.2.3 Rollback
+[P1193] [List Paragraph] 5.3 create 5 transactions for your project and execute
+[P1194] [List Paragraph] 5.3.1 Transaction1 code with output (min 5 transactions)
+[P1195] [List Paragraph] Use savepoints, commit, rollback
+[P1196] [List Paragraph] < Sample:
+[P1197] [List Paragraph] -- Step 1: Start transaction by updating book availability
+[P1198] [List Paragraph] UPDATE Books
+[P1199] [List Paragraph] SET available_copies = available_copies – 1 WHERE book_id = 101;
+[P1201] [List Paragraph] -- Step 2: Set a savepoint after first change
+[P1202] [List Paragraph] SAVEPOINT after_first_update;
+[P1204] [List Paragraph] -- Step 3: Another update
+[P1205] [List Paragraph] UPDATE Books SET available_copies = available_copies – 1 WHERE book_id = 102;
+[P1207] [List Paragraph] -- Step 4: Oops! Something's wrong with second update, rollback to savepoint
+[P1208] [List Paragraph] ROLLBACK TO after_first_update;
+[P1210] [List Paragraph] -- Step 5: Continue with a safe update
+[P1211] [List Paragraph] UPDATE Books SET available_copies = available_copies + 1 WHERE book_id = 101;
+[P1213] [List Paragraph] -- Step 6: Commit all changes since savepoint
+[P1214] [List Paragraph] COMMIT; >
+[P1216] [List Paragraph] Sample 2:
+[P1222] [List Paragraph] 5.3 Concurrency control
+[P1223] [List Paragraph] 5.3.1 Concurrency control Algorithms
+[P1224] [List Paragraph] 5.3.1 Locking commands
+[P1225] [List Paragraph] a. Row-Level Locking – SELECT ... FOR UPDATE
+[P1226] [List Paragraph] b. Table-Level Locking – LOCK TABLE
+[P1227] [List Paragraph] Lock Modes
+[P1229] [List Paragraph] c. COMMIT – Release All Locks
+[P1230] [List Paragraph] d. ROLLBACK – Undo Changes & Release Locks
+[P1231] [List Paragraph] 5.3.2 Example (1 example for your project)
+[P1245] [Normal] CHAPTER 6
+[P1246] [Normal] FRONT-END AND BACK-END CODE OF <PROJECT TITLE>
+[P1248] [Normal] 6.1 Front–End Module codes
+[P1249] [Normal] 6.2 Database connectivity
+[P1270] [Normal] CHAPTER 7
+[P1271] [Normal] RESULTS AND DISCUSSIONS
+[P1273] [Normal] 7.1 Screenshots of front-end
+[P1275] [Normal] 7.2 Screenshots of Database
+[P1296] [Normal] References
+
+=== TABLES ===
+--- TABLE 0 ---
+  Row 0: ['COURSE FACULTY                                                                         ', 'HEAD OF THE DEPARMENT']
+  Row 1: ['DESIGNATION\nDepartment', 'PROFESSOR AND HEAD\nDepartment']
+--- TABLE 1 ---
+  Row 0: ['Chapter No.', 'Title', 'Page no.']
+  Row 1: ['', 'ABSTRACT', '']
+  Row 2: ['1', 'Problem understanding, Identification of Entity and Relationships, Construction of DB using ER Model ', '']
+  Row 3: ['2', 'Design of Relational Schemas, Creation of Database and Tables for their project', '']
+  Row 4: ['3', '3.1Writing queries based on the concepts of Aggregate functions, constraints, sets', '']
+  Row 5: ['3', '3.2 Writing complex queries based on subqueries, joins and views', '']
+  Row 6: ['3', '3.3 Writing complex queries based on the concepts of functions, Triggers, Cursors and Exception Handling', '']
+  Row 7: ['4', '4.1 Analysing the pitfalls, identifying the dependencies, and applying Normalizations- 1NF, 2NF, 3NF', '']
+  Row 8: ['4', '4.2 Analysing the pitfalls, identifying the dependencies, and applying Normalizations- 4NF, 5NF', '']
+  Row 9: ['5', ' Implementation of concurrency control and recovery mechanisms.  ', '']
+  Row 10: ['6', 'Front-end And Back-End Implementation code ', '']
+  Row 11: ['7', 'Results and Discussions', '']
+--- TABLE 2 ---
+  Row 0: ['Figure No.', 'Name', 'Page no.']
+  Row 1: ['1.1', 'ER Diagram of Billwise Subscription Management System', '16']
+  Row 2: ['2.1', 'Relational Schema of BILLWISE', '20']
+  Row 3: ['3', '', '']
+  Row 4: ['4', '', '']
+  Row 5: ['5', '', '']
+--- TABLE 3 ---
+  Row 0: ['Figure No.', 'Name', 'Page no.']
+  Row 1: ['1.1', 'Entity Definitions', '17']
+  Row 2: ['1.2', 'User Schema', '17']
+  Row 3: ['1.3', 'Subscription Schema', '18']
+  Row 4: ['1.4', 'Payment Schema', '18']
+  Row 5: ['1.5', 'PaymentMethod Schema', '19']
+  Row 6: ['             \n\n', '', '']
+--- TABLE 4 ---
+  Row 0: ['Entity', 'Description', 'Key Attributes']
+  Row 1: ['\nUser', 'System user who manages subscriptions', 'user_id (PK), name, email, password']
+  Row 2: ['\nSubscription', 'Recurring subscription service', 'sub_id (PK), user_id (FK), name, price, billing_cycle, next_due_date, autopay, status']
+  Row 3: ['\nPayment', 'Payment transaction for a subscription', 'payment_id (PK), sub_id (FK), amount, payment_date, status']
+  Row 4: ['\nPaymentMethod', "User's payment methods", 'method_id (PK), user_id (FK), method_name, details']
+--- TABLE 5 ---
+  Row 0: ['Column', 'Data Type', 'Constraints', 'Description']
+  Row 1: ['\nuser_id', 'INT', 'PRIMARY KEY, AUTO_INCREMENT', 'Unique user identifier']
+  Row 2: ['name', 'VARCHAR(100)', 'NOT NULL', "User's full name"]
+  Row 3: ['\nemail', 'VARCHAR(100)', 'UNIQUE, NOT NULL', "User's email address"]
+  Row 4: ['password', 'VARCHAR(255)', 'NOT NULL', 'Hashed password']
+  Row 5: ['created_at', 'TIMESTAMP', 'DEFAULT CURRENT_TIMESTAMP', 'Account creation timestamp']
+--- TABLE 6 ---
+  Row 0: ['Column', 'Data Type', 'Constraints', 'Description']
+  Row 1: ['sub_id', 'INT', 'PRIMARY KEY, AUTO_INCREMENT', 'Unique subscription identifier']
+  Row 2: ['user_id', 'INT', 'FOREIGN KEY REFERENCES users(user_id) ON DELETE CASCADE', 'Owner of subscription']
+  Row 3: ['name', 'VARCHAR(100)', 'NOT NULL', 'Subscription service name']
+  Row 4: ['price', 'DECIMAL(10,2)', 'NOT NULL', 'Subscription price']
+  Row 5: ['billing_cycle', 'VARCHAR(20)', 'NOT NULL', 'Cycle (monthly, yearly, etc.)']
+  Row 6: ['next_due_date', 'DATE', 'NOT NULL', 'Next payment due date']
+  Row 7: ['Autopay', 'BOOLEAN', 'DEFAULT FALSE', 'DEFAULT FALSE']
+  Row 8: ['Status', 'VARCHAR(20)', "DEFAULT 'active'", 'Current status']
+  Row 9: ['created_at', 'TIMESTAMP', 'DEFAULT CURRENT_TIMESTAMP', 'Subscription creation timestamp']
+--- TABLE 7 ---
+  Row 0: ['Column', 'Data Type', 'Constraints', 'Description']
+  Row 1: ['payment_id', 'INT', 'PRIMARY KEY, AUTO_INCREMENT', 'Unique payment identifier']
+  Row 2: ['sub_id', 'INT', 'FOREIGN KEY REFERENCES subscriptions(sub_id) ON DELETE CASCADE', 'Subscription this payment is for']
+  Row 3: ['Amount', 'DECIMAL(10,2)', 'NOT NULL', 'Payment amount']
+  Row 4: ['payment_date', 'DATE', 'NOT NULL', 'Date payment was made']
+  Row 5: ['Status', 'VARCHAR(20)', "DEFAULT 'completed'", 'Payment status']
+  Row 6: ['created_at', 'TIMESTAMP', 'DEFAULT CURRENT_TIMESTAMP', 'Record creation timestamp']
+--- TABLE 8 ---
+  Row 0: ['Column\t', 'Data Type', 'Constraints', 'Description']
+  Row 1: ['method_id', 'INT', 'PRIMARY KEY, AUTO_INCREMENT', 'Unique payment method identifier']
+  Row 2: ['user_id', 'INT', 'FOREIGN KEY REFERENCES users(user_id) ON DELETE CASCADE', 'Owner of payment method']
+  Row 3: ['method_name', 'VARCHAR(50)', 'NOT NULL', 'Name of payment method']
+  Row 4: ['Details', 'TEXT', 'NULL', 'Additional details (card number, etc.)']
+  Row 5: ['created_at', 'TIMESTAMP', 'DEFAULT CURRENT_TIMESTAMP', 'Record creation timestamp']
+--- TABLE 9 ---
+  Row 0: ['Lock Mode', 'Description']
+  Row 1: ['ROW SHARE', 'Allows concurrent access; prevents other sessions from locking the table exclusively.']
+  Row 2: ['ROW EXCLUSIVE', 'Prevents other sessions from locking in share mode. Used by default for DML.']
+  Row 3: ['SHARE', 'Allows queries but not updates or deletes.']
+  Row 4: ['SHARE ROW EXCLUSIVE', 'A mix; more restrictive than SHARE.']
+  Row 5: ['EXCLUSIVE', 'Prevents all other access — full table lock.']

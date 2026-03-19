@@ -1,0 +1,87 @@
+# AI Content Repurposer - DBMS Project Review Q&A Guide
+
+This document contains expected questions and suggested answers for your DBMS Project Review 2. The questions are categorized by the specific database concepts you are required to demonstrate (Weeks 4-6).
+
+---
+
+## 📌 Section 1: Constraints & Aggregate Functions (Week 4)
+
+**Q1: What are Constraints in a database, and which ones did you use in your project?**
+**Answer:** Constraints are rules applied to columns to enforce data integrity and reliability. In my project, I used:
+*   `PRIMARY KEY`: On UUID columns (e.g., `user_id`, `job_id`) to uniquely identify records.
+*   `FOREIGN KEY`: To link tables (e.g., `user_id` in `contents` referencing the `users` table) with `ON DELETE CASCADE` to prevent orphaned records.
+*   `UNIQUE`: On the `email` column in the `users` table so no two users can register with the same email.
+*   `NOT NULL`: To ensure required fields like `name`, `original_text`, and `target_platform` cannot be left empty.
+*   `CHECK`: To restrict values. For example, ensuring `status` in `repurpose_jobs` can only be 'pending', 'processing', 'completed', or 'failed'.
+
+**Q2: Explain how `ON DELETE CASCADE` works in your schema.**
+**Answer:** Because our data flows in a pipeline (User -> Content -> Job -> Output), if a parent record is deleted, all dependent child records should also be deleted. For example, if a user deletes their account, the `ON DELETE CASCADE` constraint automatically deletes their source content, which then cascades to delete the associated jobs, which finally cascades to delete the generated social media posts.
+
+**Q3: What is the difference between the `WHERE` clause and the `HAVING` clause? Can you show where you used it?**
+**Answer:** The `WHERE` clause filters rows *before* any grouping or aggregation happens. The `HAVING` clause filters the result set *after* the `GROUP BY` aggregation has been applied. 
+In my project, I wrote a query to find users who have submitted more than one piece of content. I grouped by `user_id` and used `HAVING COUNT(content_id) >= 2`. I couldn't use `WHERE` because the count is an aggregated value.
+
+---
+
+## 📌 Section 2: Set Operations (Week 4)
+
+**Q4: Can you explain the difference between `UNION` and `UNION ALL`?**
+**Answer:** Both are used to combine the result sets of two or more `SELECT` statements. 
+*   `UNION` removes any duplicate rows from the combined result.
+*   `UNION ALL` keeps all rows, including duplicates. It is generally faster because it doesn't spend resources sorting and deduplicating.
+I used `UNION ALL` to create an "Activity Feed" that chronological lists both when a user created content and when they started a new job. 
+
+**Q5: MySQL doesn't natively support `EXCEPT` or `INTERSECT`. How did you simulate `EXCEPT`?**
+**Answer:** To find records in Query A that do not exist in Query B (which is what `EXCEPT` does), I used the `NOT IN` clause combined with a subquery, or alternatively a `LEFT JOIN` where the right side `IS NULL`. I used this to find "Users who have created content but have *never* had a successfully completed job."
+
+---
+
+## 📌 Section 3: Subqueries & Joins (Week 5)
+
+**Q6: What is a Subquery? Did you use a correlated subquery?**
+**Answer:** A subquery is a query nested inside another query. A standard subquery executes once and passes its results to the outer query. 
+A **correlated subquery**, however, depends on values from the outer query, meaning it has to execute once for *every single row* returned by the outer query. I used a correlated subquery in my `contents` query to fetch the *most recent* job status for each specific content piece by referencing the outer table's `content_id`.
+
+**Q7: Explain the difference between `INNER JOIN` and `LEFT JOIN` in the context of your application.**
+**Answer:** 
+*   An `INNER JOIN` only returns rows where there is a match in both tables. I used this to show the full pipeline (User -> Content -> Job -> Output), returning only completed chains.
+*   A `LEFT JOIN` returns *all* rows from the left table, and matching rows from the right table. If there is no match, it returns NULLs. I used a `LEFT JOIN` to generate an admin report showing *every registered user*, even if they haven't submitted any content or jobs yet.
+
+---
+
+## 📌 Section 4: Views (Week 5)
+
+**Q8: What is a View, and why did you use one instead of just writing the query in your frontend/backend code?**
+**Answer:** A View is a virtual table based on the result-set of a predefined SQL query. 
+I created views like `vw_user_dashboard` to abstract complex logic. Instead of writing a massive 4-table join with multiple aggregate functions (to calculate job success rates) inside my application code, I saved it as a View in the database. When the backend needs the dashboard data, it just runs a simple `SELECT * FROM vw_user_dashboard`, making the application code cleaner, more secure, and easier to maintain.
+
+---
+
+## 📌 Section 5: Triggers (Week 6)
+
+**Q9: What is a Trigger, and give an example of one you implemented.**
+**Answer:** A Trigger is a stored program that automatically executes (or "fires") in response to a specific database event (`INSERT`, `UPDATE`, or `DELETE`).
+I implemented an **audit log trigger** (`trg_job_status_change`). It is an `AFTER UPDATE` trigger on the `repurpose_jobs` table. Whenever a job's status changes from 'pending' to 'completed', the trigger detects the change (`IF OLD.status != NEW.status`) and automatically inserts a record into the `job_audit_log` table, recording the exact timestamp and what the status changed to. 
+
+**Q10: Can a trigger be used for validation?**
+**Answer:** Yes. I implemented a `BEFORE DELETE` trigger on the `users` table. Instead of letting `ON DELETE CASCADE` blindly wipe out all a user's data, this trigger checks if the user currently has active content. If they do, the trigger uses `SIGNAL SQLSTATE` to throw a custom exception, blocking the deletion to prevent accidental data loss.
+
+---
+
+## 📌 Section 6: Cursors & Exception Handling (Week 6)
+
+**Q11: What is a Cursor used for in MySQL?**
+**Answer:** By default, SQL operations run on entire sets of data at once. A Cursor allows a Stored Procedure to fetch and process rows one-by-one iteratively. 
+I used a Cursor in my `sp_platform_output_report` procedure. It fetches each distinct platform from the database, runs complex calculations to figure out the average outputs generated per job for that specific platform, and inserts the calculated results into a temporary reporting table row-by-row.
+
+**Q12: How did you implement Exception Handling inside your stored procedures?**
+**Answer:** While looping through a Cursor, errors can occur or the loop can run out of rows. 
+I used a `DECLARE CONTINUE HANDLER FOR NOT FOUND` to gracefully exit the `WHILE` loop when the cursor reaches the end of the data. 
+I also used a `DECLARE EXIT HANDLER FOR SQLEXCEPTION`. If a serious database error occurs during the script execution, this handler catches the error, forces a `ROLLBACK` of the transaction so no partial/corrupted data is saved, and drops any temporary tables to clean up memory.
+
+---
+
+### 💡 Tips for the Presentation:
+1.  **Keep the ER Diagram open:** Reviewers are visual. Pointing to the tables while explaining your JOINS or CASCADE limits confusion.
+2.  **Speak about the "Business problem":** Don't just say "I used a Left Join." Say, "I needed to see all users, including inactive ones, so I used a Left Join."
+3.  **Run queries live:** If the reviewer asks about a trigger, actually open MySQL, run an `UPDATE` on a job status, and then `SELECT * FROM job_audit_log` to prove it worked in real-time.

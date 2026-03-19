@@ -1,0 +1,224 @@
+[P0] [Normal] (A typical Specimen of Cover Page & Title Page)
+[P1] [Normal] <Font Style Times New Roman - Bold>
+[P2] [Normal] PROJECT TITLE
+[P3] [Normal] <Font Size 18> <1.5 line spacing>
+[P4] [Normal] 21CSC205P Database Management Systems
+[P5] [Normal] A MINI PROJECT REPORT
+[P6] [Normal] <Font Size 14>
+[P7] [Normal] Submitted by
+[P8] [Normal] <Font Size 14> <Italic>
+[P9] [Normal] STUDENT1 NAME [REG NUM]
+[P10] [Normal] STUDENT2 NAME [REG NUM]
+[P11] [Normal] <Font Size 16>
+[P12] [Normal] Under the Guidance of
+[P13] [Normal] <Font Size 14> <Italic>
+[P14] [Normal] (GUIDE NAME )
+[P15] [Normal] <Font Size 16>
+[P16] [Normal] (Designation, Department)
+[P17] [Normal] <Font Size 12>
+[P19] [Normal] in partial fulfillment of the requirements for the degree of
+[P20] [Normal] <Font Size 14> <1.5 line spacing>
+[P21] [Normal] BACHELOR OF TECHNOLOGY
+[P22] [Normal] in
+[P23] [Normal] COMPUTER SCIENCE ENGINEERING
+[P24] [Normal] with specialization in (SPECIALIZATION NAME)
+[P25] [Normal] <Font Size 16>
+[P28] [Normal] DEPARTMENT OF NETWROKING AND COMMUNICATIONS
+[P29] [Normal] SCHOOL OF COMPUTING
+[P30] [Normal] COLLEGE OF ENGINEERING AND TECHNOLOGY
+[P31] [Normal] SRM INSTITUTE OF SCIENCE AND TECHNOLOGY
+[P32] [Normal] KATTANKULATHUR- 603 203
+[P33] [Normal] <Font Size 16><l.5 line spacing>
+[P34] [Normal] MAY 2026<Font Size 14>
+[P38] [Normal] SRM INSTITUTE OF SCIENCE AND TECHNOLOGY KATTANKULATHUR – 603 203
+[P39] [Normal] <Font Style Times New Roman — Size - 18>
+[P40] [Normal] BONAFIDE CERTIFICATE
+[P41] [Normal] <Font Style Times New Roman — Size - 16>
+[P42] [Normal] <Font Style Times New Roman — Size - 14>
+[P45] [Normal] Certified that Project report titled “PROJECT TITLE ” is the bonafide work of “STUDENT1 NAME [REG NUM], STUDENT2 NAME [REG NUM]” who carried out the 21CSC205P Database Management Systems mini project work under my supervision.
+[P70] [Normal] ABSTRACT
+[P94] [Normal] TABLE OF CONTENTS
+[P100] [Normal] LIST OF FIGURES
+[P120] [Normal] LIST OF TABLES
+[P140] [Normal] CHAPTER 1
+[P142] [Normal] PROBLEM UNDERSTANDING, IDENTIFICATION OF ENTITY AND RELATIONSHIPS, CONSTRUCTION OF DB USING ER MODEL FOR THE <PROJECT Name>
+[P144] [List Paragraph] Introduction
+[P145] [List Paragraph] Motivation
+[P146] [List Paragraph] Scope
+[P147] [List Paragraph] Problem Statement
+[P148] [List Paragraph] Project Requirements
+[P149] [List Paragraph] Identification of Entity and Relationships
+[P150] [List Paragraph] Construction of DB Using ER Model for the <Project name>
+[P155] [Normal] Note:
+[P156] [List Paragraph] Use font family: Times new roman, size 12
+[P157] [List Paragraph] Figure name: Chapter no. Figure no: Figure Name, Place in in bottom center of the figure (eg: Figure 1.1: ER diagram of Student Management System)
+[P158] [List Paragraph] Figures must be clear with all text inside it visible
+[P159] [List Paragraph] Table name: Chapter no. Table no: Table name, Place in in top center of the table
+[P160] [List Paragraph] (eg: Table 1.1: Student Schema)
+[P161] [List Paragraph] Table must not be pasted in image format, must be editable
+[P162] [List Paragraph] All text must be properly aligned (justified)
+[P163] [List Paragraph] Set the page margin
+[P165] [Normal] Chapter 2
+[P166] [Normal] Design of Relational Schemas, Creation of Database and Tables for <Project Title>
+[P168] [Normal] 2.1 Relational Schema for <project title>
+[P169] [Normal] Sample
+[P171] [Normal] Figure 2.1: Relational Schema for <project title>
+[P172] [Normal] The figure 2.1 depicts the relational schema for the <project title> . (give explanation)
+[P174] [Normal] 2.2 Description of Tables
+[P175] [Normal] Sample
+[P178] [Normal] List all the table with the attributes, datatypes, size, constraints
+[P179] [Normal] 2.3 Creation of Database and Tables - DDL Commands
+[P180] [Normal] DDL Commands to create all the tables
+[P181] [Normal] 2.4 Insertion of tuples into the table – DML commands
+[P182] [Normal] Insert SQL (for all tables)
+[P183] [Normal] Example:
+[P184] [Normal] INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country) VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway'),
+('Greasy Burger', 'Per Olsen', 'Gateveien 15', 'Sandnes', '4306', 'Norway'),
+('Tasty Tee', 'Finn Egan', 'Streetroad 19B', 'Liverpool', 'L1 0AA', 'UK');
+[P185] [Normal] Customer table:
+[P187] [Normal] CHAPTER 3
+[P188] [Normal] Complex queries based on the concepts of constraints, sets, joins, views, Triggers and Cursors.
+[P189] [Normal] (min 3 questions with queries for all topics)
+[P190] [List Paragraph] < create complex queries based on the sub-topic with questions and SQL statement with output>
+[P192] [List Paragraph] Adding Constraints and queries based on constraints
+[P193] [List Paragraph] Question:
+[P195] [List Paragraph] SQL Statement:
+[P197] [List Paragraph] Output:
+[P199] [List Paragraph] Queries based on Aggregate Functions
+[P201] [List Paragraph] Question:
+[P203] [List Paragraph] SQL Statement:
+[P205] [List Paragraph] Output:
+[P207] [List Paragraph] Complex queries based on Sets
+[P208] [List Paragraph] Question:
+[P210] [List Paragraph] SQL Statement:
+[P212] [List Paragraph] Output:
+[P214] [List Paragraph] Complex queries based on Subqueries
+[P216] [List Paragraph] Question:
+[P218] [List Paragraph] SQL Statement:
+[P220] [List Paragraph] Output:
+[P222] [List Paragraph] Complex queries based on Joins
+[P223] [Normal] Question:
+[P225] [Normal] SQL Statement:
+[P227] [List Paragraph] Output:
+[P229] [List Paragraph] Complex queries based on views
+[P230] [Normal] Question:
+[P232] [Normal] SQL Statement:
+[P234] [Normal] Output:
+[P237] [List Paragraph] Complex queries based on Triggers
+[P238] [Normal] Question:
+[P240] [Normal] SQL Statement:
+[P242] [Normal] Output:
+[P244] [List Paragraph] Complex queries based on Cursors
+[P245] [Normal] Question:
+[P247] [Normal] SQL Statement:
+[P249] [Normal] Output:
+[P271] [List Paragraph] CHAPTER 4
+[P273] [List Paragraph] ANALYZING THE PITFALLS, IDENTIFYING THE DEPENDENCIES, AND APPLYING NORMALIZATIONS
+[P275] [List Paragraph] (show the table before and after respective normalization)
+[P277] [List Paragraph] 4.1 Analyse the Pitfalls in Relations
+[P278] [List Paragraph] 4.2 First Normal Form
+[P279] [List Paragraph] 4.2.1: Identify Dependency
+[P280] [List Paragraph] 4.2.2: Apply Normalization to 1NF
+[P282] [List Paragraph] 4.3 Second Normal Form
+[P283] [List Paragraph] 4.3.1: Identify Dependency
+[P284] [List Paragraph] 4.3.2: Apply Normalization to 2NF
+[P286] [List Paragraph] 4.4 Third Normal Form
+[P287] [List Paragraph] 4.4.1: Identify Dependency
+[P288] [List Paragraph] 4.4.2: Apply Normalization to 3NF
+[P290] [List Paragraph] 4.5 BCNF
+[P291] [List Paragraph] 4.5.1: Identify Dependency
+[P292] [List Paragraph] 4.5.2: Apply Normalization to BCNF
+[P294] [List Paragraph] 4.6 Fourth Normal Form
+[P295] [List Paragraph] 4.6.1: Identify Dependency
+[P296] [List Paragraph] 4.6.2: Apply Normalization to 4NF
+[P298] [List Paragraph] 4.7 Fifth Normal Form
+[P299] [List Paragraph] 4.7.1: Identify Dependency
+[P300] [List Paragraph] 4.7.2: Apply Normalization to 5NF
+[P302] [List Paragraph] CHAPTER 5
+[P303] [List Paragraph] IMPLEMENTATION OF CONCURRENCY CONTROL AND RECOVERY MECHANISMS
+[P305] [List Paragraph] 5.1 Introduction to Transactions
+[P306] [List Paragraph] 5.1.1 Properties
+[P307] [List Paragraph] 5.1.2 States
+[P308] [List Paragraph] 5.2 Transaction Control Language (TCL)
+[P309] [List Paragraph] 5.2.1 Save point
+[P310] [List Paragraph] 5.2.2 Commit
+[P311] [List Paragraph] 5.2.3 Rollback
+[P313] [List Paragraph] 5.3 create 5 transactions for your project and execute
+[P314] [List Paragraph] 5.3.1 Transaction1 code with output (min 5 transactions)
+[P315] [List Paragraph] Use savepoints, commit, rollback
+[P316] [List Paragraph] < Sample:
+[P317] [List Paragraph] -- Step 1: Start transaction by updating book availability
+[P318] [List Paragraph] UPDATE Books
+[P319] [List Paragraph] SET available_copies = available_copies – 1 WHERE book_id = 101;
+[P321] [List Paragraph] -- Step 2: Set a savepoint after first change
+[P322] [List Paragraph] SAVEPOINT after_first_update;
+[P324] [List Paragraph] -- Step 3: Another update
+[P325] [List Paragraph] UPDATE Books SET available_copies = available_copies – 1 WHERE book_id = 102;
+[P327] [List Paragraph] -- Step 4: Oops! Something's wrong with second update, rollback to savepoint
+[P328] [List Paragraph] ROLLBACK TO after_first_update;
+[P330] [List Paragraph] -- Step 5: Continue with a safe update
+[P331] [List Paragraph] UPDATE Books SET available_copies = available_copies + 1 WHERE book_id = 101;
+[P333] [List Paragraph] -- Step 6: Commit all changes since savepoint
+[P334] [List Paragraph] COMMIT; >
+[P336] [List Paragraph] Sample 2:
+[P342] [List Paragraph] 5.3 Concurrency control
+[P343] [List Paragraph] 5.3.1 Concurrency control Algorithms
+[P344] [List Paragraph] 5.3.1 Locking commands
+[P345] [List Paragraph] a. Row-Level Locking – SELECT ... FOR UPDATE
+[P346] [List Paragraph] b. Table-Level Locking – LOCK TABLE
+[P347] [List Paragraph] Lock Modes
+[P349] [List Paragraph] c. COMMIT – Release All Locks
+[P350] [List Paragraph] d. ROLLBACK – Undo Changes & Release Locks
+[P351] [List Paragraph] 5.3.2 Example (1 example for your project)
+[P365] [Normal] CHAPTER 6
+[P366] [Normal] FRONT-END AND BACK-END CODE OF <PROJECT TITLE>
+[P368] [Normal] 6.1 Front–End Module codes
+[P369] [Normal] 6.2 Database connectivity
+[P390] [Normal] CHAPTER 7
+[P391] [Normal] RESULTS AND DISCUSSIONS
+[P393] [Normal] 7.1 Screenshots of front-end
+[P395] [Normal] 7.2 Screenshots of Database
+[P416] [Normal] References
+
+=== TABLES ===
+--- TABLE 0 ---
+  Row 0: ['COURSE FACULTY                                                                         ', 'HEAD OF THE DEPARMENT']
+  Row 1: ['DESIGNATION\nDepartment', 'PROFESSOR AND HEAD\nDepartment']
+--- TABLE 1 ---
+  Row 0: ['Chapter No.', 'Title', 'Page no.']
+  Row 1: ['', 'ABSTRACT', '']
+  Row 2: ['1', 'Problem understanding, Identification of Entity and Relationships, Construction of DB using ER Model for their project', '']
+  Row 3: ['2', 'Design of Relational Schemas, Creation of Database and Tables for their project', '']
+  Row 4: ['3', '3.1Writing queries based on the concepts of Aggregate functions, constraints, sets', '']
+  Row 5: ['3', '3.2 Writing complex queries based on subqueries, joins and views', '']
+  Row 6: ['3', '3.3 Writing complex queries based on the concepts of functions, Triggers, Cursors and Exception Handling', '']
+  Row 7: ['4', '4.1 Analysing the pitfalls, identifying the dependencies, and applying Normalizations- 1NF, 2NF, 3NF', '']
+  Row 8: ['4', '4.2 Analysing the pitfalls, identifying the dependencies, and applying Normalizations- 4NF, 5NF', '']
+  Row 9: ['5', ' Implementation of concurrency control and recovery mechanisms.  ', '']
+  Row 10: ['6', 'Front-end And Back-End Implementation code ', '']
+  Row 11: ['7', 'Results and Discussions', '']
+--- TABLE 2 ---
+  Row 0: ['Figure No.', 'Name', 'Page no.']
+  Row 1: ['1', '', '']
+  Row 2: ['2', '', '']
+  Row 3: ['3', '', '']
+  Row 4: ['4', '', '']
+  Row 5: ['5', '', '']
+--- TABLE 3 ---
+  Row 0: ['Figure No.', 'Name', 'Page no.']
+  Row 1: ['1', '', '']
+  Row 2: ['2', '', '']
+  Row 3: ['3', '', '']
+  Row 4: ['4', '', '']
+  Row 5: ['5', '', '']
+--- TABLE 4 ---
+  Row 0: ['CustomerID', 'CustomerName', 'ContactName', 'Address', 'City', 'PostalCode', 'Country']
+  Row 1: ['89', 'White Clover Markets', 'Karl Jablonski', '305 - 14th Ave. S. Suite 3B', 'Seattle', '98128', 'USA']
+  Row 2: ['90\n', 'Wilman Kala', 'Matti Karttunen', 'Keskuskatu 45', 'Helsinki', '21240', 'Finland']
+--- TABLE 5 ---
+  Row 0: ['Lock Mode', 'Description']
+  Row 1: ['ROW SHARE', 'Allows concurrent access; prevents other sessions from locking the table exclusively.']
+  Row 2: ['ROW EXCLUSIVE', 'Prevents other sessions from locking in share mode. Used by default for DML.']
+  Row 3: ['SHARE', 'Allows queries but not updates or deletes.']
+  Row 4: ['SHARE ROW EXCLUSIVE', 'A mix; more restrictive than SHARE.']
+  Row 5: ['EXCLUSIVE', 'Prevents all other access — full table lock.']
